@@ -1,3 +1,4 @@
+import fs from "fs";
 import sharp from "sharp";
 
 /**
@@ -14,6 +15,10 @@ function ResizeImage(
   height: number,
   Output: string
 ): Promise<boolean> {
+    if (!fs.existsSync(
+        __dirname + "/../../../../" + "assets/thumb"
+      )) 
+      fs.mkdirSync(__dirname + "/../../../../" + "assets/thumb")
   return Image.resize(width, height)
     .toFile(Output)
     .then(() => {
