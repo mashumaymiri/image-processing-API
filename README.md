@@ -2,7 +2,9 @@
 
 ## Scripts
 npm run test: to test the application
+
 npm run start: to start the application
+
 npm run build: to build the application
 
 ## Endpoints
