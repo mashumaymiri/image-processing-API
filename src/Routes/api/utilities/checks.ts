@@ -39,7 +39,9 @@ function CheckWidthHeight(
 
   if (
     isNaN(parseInt(req.query["width"] as string)) ||
-    isNaN(parseInt(req.query["height"] as string))
+    isNaN(parseInt(req.query["height"] as string)) ||
+    parseInt(req.query["width"] as string) <= 0 ||
+    parseInt(req.query["height"] as string) <= 0
   )
     // if parsing the strings returns NaN
     res.status(400).send("Invalid parameters!");
